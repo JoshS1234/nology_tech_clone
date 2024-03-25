@@ -20,6 +20,7 @@ const lastName = "Smith";
 
 export const createFullName = () => {
   // Write your code here
+  return firstName + " " + lastName;
 };
 
 /**
@@ -33,6 +34,11 @@ const largeNumber2 = 200;
 
 export const findLargestNumber = () => {
   // Write your code here
+  if (largeNumber1 >= largeNumber2) {
+    return largeNumber1;
+  } else {
+    return largeNumber2;
+  }
 };
 
 /**
@@ -46,6 +52,7 @@ const addNumber2 = 24;
 
 export const addNumbers = () => {
   // Write your code here
+  return addNumber1 + addNumber2;
 };
 
 /* Intermediate Challenges */
@@ -60,6 +67,7 @@ const password = "thisIsMyVeryLongPassword123456789";
 
 export const findLengthOfPassword = () => {
   // Write your code here
+  return password.length;
 };
 
 /**
@@ -76,6 +84,7 @@ const thing = "I am a thing";
 
 export const findType = () => {
   // Write your code here
+  return "This is a " + typeof thing;
 };
 
 /**
@@ -89,6 +98,14 @@ const nameTagOption = "Timothy";
 
 export const getIsValidOnNameTag = () => {
   // Write your code here
+  if (
+    nameTagOption.length <= 8 &&
+    nameTagOption[0] == nameTagOption[0].toUpperCase()
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* Advanced Challenges */
@@ -103,6 +120,7 @@ const stringToConvert = "14.45";
 
 export const convertStringToNumber = () => {
   // Write your code here
+  return parseFloat(stringToConvert);
 };
 
 /**
@@ -117,6 +135,14 @@ const stringWithUppercaseLetters = "I Am A String With Uppercase Letters";
 
 export const getHasUppercaseLetters = () => {
   // Write your code here
+
+  let regexSeq = /[A-Z]/;
+
+  if (regexSeq.test(stringWithUppercaseLetters)) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* Expert Challenges */
@@ -133,4 +159,15 @@ const pascalCaseVariableName = "IWantToBeSnakeCase";
 
 export const convertPascalCaseToSnakeCase = () => {
   // Write your code here
+  let newString = pascalCaseVariableName[0].toLowerCase();
+
+  for (let i = 1; i < pascalCaseVariableName.length; i++) {
+    if (pascalCaseVariableName[i] == pascalCaseVariableName[i].toUpperCase()) {
+      newString += "_" + pascalCaseVariableName[i].toLowerCase();
+    } else {
+      newString += pascalCaseVariableName[i];
+    }
+  }
+
+  return newString;
 };
